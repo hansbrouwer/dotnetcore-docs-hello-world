@@ -16,7 +16,16 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
-    public void OnGet()
-    {        
+    
+    public IActionResult OnGet(bool redir)
+{
+    if (redir)
+    {
+        return Redirect("https://nu.nl");
     }
+    else
+    {
+        return Redirect("https://bol.com");
+    }
+}
 }
